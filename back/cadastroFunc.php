@@ -19,7 +19,7 @@
         </nav>
         <main>
             <section>
-                <form action="post">
+                <form action="../conexao/conexao.php" method="post">
                     <div class="container">
                         <h1>Cadastro de Funcionário</h1>
                         <div class="direita">
@@ -28,19 +28,19 @@
                                 <input type="text" class="form-control" id="nome" name="nome" required>
                             </div>
                             <div class="mb-3">
-                                <label for="cargo" class="form-label">Cargo</label>
-                                <input type="text" class="form-control" id="cargo" name="cargo" required>
+                                <label for="cargo" class="form-label">E-mail</label>
+                                <input type="text" class="form-control" id="email" name="email" required>
                             </div>
                         </div>
                         <div class="esquerda">
                             <div class="mb-3">
-                                <label for="salario" class="form-label">Departamento</label>
-                                <input type="number" class="form-control" id="salario" name="salario" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="salario" class="form-label">Cargo</label>
-                                <input type="number" class="form-control" id="salario" name="salario" required>
-                            </div>
+                            <label for="departamento" class="form-label">Departamento</label>
+                            <input type="text" class="form-control" id="departamento" name="departamento" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="cargo" class="form-label">Cargo</label>
+                            <input type="text" class="form-control" id="cargo" name="cargo" required>
+                        </div>
                         </div>
                         <div class="mb-4">
                             <label for="salario" class="form-label">Salário</label>
@@ -51,6 +51,8 @@
                 </form>
             </section>
         </main>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+    
+    
     </body>
 </html>
