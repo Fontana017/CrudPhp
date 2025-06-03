@@ -19,6 +19,9 @@
             <a href="DemitirFunc.php"><button class="btn btn-sm btn-outline-secondary" type="button">Demitir Funcionario</button></a>
         </form>
     </nav>
+
+
+    
     <main>
         <section>
             <form action="../conexao/conexao.php" method="post">

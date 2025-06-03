@@ -55,6 +55,9 @@
                     echo "<div class='mensagem erro mt-3'>Erro ao excluir funcionário.</div>";
                 }
 
+
+
+                
                 $stmt->close();
                 $conn->close();
             } catch (mysqli_sql_exception $e) {
