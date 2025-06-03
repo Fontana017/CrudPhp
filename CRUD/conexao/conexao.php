@@ -1,8 +1,8 @@
 <?php
-$servername = "localhost";
-$username = "root";
+$serverName = "localhost";
+$userName = "root";
 $password = "";
-$dbname = "crudPHP";
+$dbName = "faculdade";
 
 //Criando Conexão
 $conn = new mysqli($serverName, $userName, $password, $dbName);
