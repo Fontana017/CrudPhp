@@ -12,25 +12,65 @@
             <form class="container-fluid justify-content-start">
                 <a href="../index.php"><button class="btn btn-outline-success me-2" type="button">   Inicio   </button></a>
                 <a href="cadastroFunc.php"><button class="btn btn-sm btn-outline-secondary" type="button">Novo Funcionario</button></a>
+                <a href="listarFunc.php"><button class="btn btn-sm btn-outline-secondary" type="button">Listar Funcionario</button></a>
                 <a href="alterarSal.php"><button class="btn btn-sm btn-outline-secondary" type="button">Alterar salário</button></a>
                 <a href="alterarDepto.php"><button class="btn btn-sm btn-outline-secondary" type="button">Alterar Departamento</button></a>
                 <a href="DemitirFunc.php"><button class="btn btn-sm btn-outline-secondary" type="button">Demitir Funcionario</button></a>
             </form>
         </nav>
         <main>
-            <section>
-                <h1>Bem vindo ao crud de RH</h1>
-                <br>
-                <h3>Aqui você terá funções para gerenciar <br> os funcionarios de uma empresa</h3>
-                <br>
-                <br>
-                <h3>Para começar clique no botão Novo Funcionario</h3>
-                    <br>
-                    <br>
-                <a href="back/cadastroFunc.php"><button class="btn btn-outline-success me-2" type="button">Novo Funcionario</button></a>
+    <section>
+        <form action="" method="post">
+            <div class="container">
+                <h1>Alterar id_cargo</h1>
+                <div class="direita">
+                    <div class="mb-3">
+                        <label for="text" class="form-label">Email do Funcionário</label>
+                        <input type="text" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="id_cargo" class="form-label">Novo id_cargo</label>
+                        <input type="number" class="form-control" id="id_cargo" name="id_cargo" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Alterar id_cargo</button>
+            </div>
+        </form>
 
-            </section>
-        </main>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
-    </body>
+        <?php
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+            try {
+                include("../conexao/conexao.php");
+
+                $email = $_POST['email'];
+                $novoid_cargo = $_POST['id_cargo'];
+
+                $sql = "UPDATE funcionarios SET id_cargo = ? WHERE email = ?";
+                $stmt = $conn->prepare($sql);
+                $stmt->bind_param("ss", $novoid_cargo, $email);
+
+                if ($stmt->execute()) {
+                    if ($stmt->affected_rows > 0) {
+                        echo "<script language='javascript' type='text/javascript'>alert('Id alterado com sucesso.');window.location.href='alterarSal.php';</script>";
+                    } else {
+                        echo "<script language='javascript' type='text/javascript'>alert('Nenhum funcionário encontrado com esse email.');window.location.href='alterarSal.php';</script>";
+                    }
+                } else {
+                    echo "<script language='javascript' type='text/javascript'>alert('Erro ao alterar o Id do usuario.');window.location.href='alterarSal.php';</script>";
+                }
+
+                $stmt->close();
+                $conn->close();
+            } catch (mysqli_sql_exception $e) {
+                echo "<div class='mensagem erro mt-3'>Erro: " . $e->getMessage() . "</div>";
+            }
+        }
+        ?>
+    </section>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+        crossorigin="anonymous"></script>
+</body>
 </html>

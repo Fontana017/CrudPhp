@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,6 +12,7 @@
             <form class="container-fluid justify-content-start">
                 <a href="index.php"><button class="btn btn-outline-success me-2" type="button">   Inicio   </button></a>
                 <a href="back/cadastroFunc.php"><button class="btn btn-sm btn-outline-secondary" type="button">Novo Funcionario</button></a>
+                <a href="back/listarFunc.php"><button class="btn btn-sm btn-outline-secondary" type="button">Listar Funcionario</button></a>
                 <a href="back/alterarSal.php"><button class="btn btn-sm btn-outline-secondary" type="button">Alterar salário</button></a>
                 <a href="back/alterarDepto.php"><button class="btn btn-sm btn-outline-secondary" type="button">Alterar Departamento</button></a>
                 <a href="back/DemitirFunc.php"><button class="btn btn-sm btn-outline-secondary" type="button">Demitir Funcionario</button></a>
