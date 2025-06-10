@@ -13,10 +13,7 @@
     <form class="container-fluid justify-content-start">
         <a href="../index.php"><button class="btn btn-outline-success me-2" type="button"> Inicio </button></a>
         <a href="cadastroFunc.php"><button class="btn btn-sm btn-outline-secondary" type="button">Novo Funcionario</button></a>
-<<<<<<< HEAD
         <a href="listarFunc.php"><button class="btn btn-sm btn-outline-secondary" type="button">Listar Funcionario</button></a>
-=======
->>>>>>> 4fada993cb0d3e682025c0791b907505a03dffb4
         <a href="alterarSal.php"><button class="btn btn-sm btn-outline-secondary" type="button">Alterar salário</button></a>
         <a href="alterarDepto.php"><button class="btn btn-sm btn-outline-secondary" type="button">Alterar Departamento</button></a>
         <a href="DemitirFunc.php"><button class="btn btn-sm btn-outline-secondary" type="button">Demitir Funcionario</button></a>
@@ -51,33 +48,18 @@
 
                 if ($stmt->execute()) {
                     if ($stmt->affected_rows > 0) {
-<<<<<<< HEAD
-                        echo "<script language='javascript' type='text/javascript'>alert('Funcionario demitido.');window.location.href='index.php';</script>";
+                        echo "<div class='alert alert-success mt-3'>Funcionário excluído com sucesso!</div>";
                     } else {
-                        echo "<script language='javascript' type='text/javascript'>alert('Nenhum funcionário encontrado com esse email.');window.location.href='DemitirFunc.php';</script>";
+                        echo "<div class='alert alert-warning mt-3'>Nenhum funcionário encontrado com esse email.</div>";
                     }
                 } else {
-                    echo "<script language='javascript' type='text/javascript'>alert('Erro ao alterar o Id do usuario.');window.location.href='alterarSal.php';</script>";
+                    echo "<div class='alert alert-danger mt-3'>Erro ao excluir funcionário.</div>";
                 }
 
-
-=======
-                        echo "<div class='mensagem sucesso mt-3'>Funcionário excluído com sucesso!</div>";
-                    } else {
-                        echo "<div class='mensagem erro mt-3'>Nenhum funcionário encontrado com esse email.</div>";
-                    }
-                } else {
-                    echo "<div class='mensagem erro mt-3'>Erro ao excluir funcionário.</div>";
-                }
-
-
-
->>>>>>> 4fada993cb0d3e682025c0791b907505a03dffb4
-                
                 $stmt->close();
                 $conn->close();
             } catch (mysqli_sql_exception $e) {
-                echo "<div class='mensagem erro mt-3'>Erro: " . $e->getMessage() . "</div>";
+                echo "<div class='alert alert-danger mt-3'>Erro: " . htmlspecialchars($e->getMessage()) . "</div>";
             }
         }
         ?>
@@ -87,8 +69,4 @@
         integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
         crossorigin="anonymous"></script>
 </body>
-<<<<<<< HEAD
 </html>
-=======
-</html>
->>>>>>> 4fada993cb0d3e682025c0791b907505a03dffb4

@@ -4,23 +4,11 @@ $username = "root";
 $password = "";
 $dbname = "crudPHP";
 
-<<<<<<< HEAD
-$conn = new mysqli("localhost", "root", "", "crudPHP");
+// Criando conexão
+$conn = new mysqli($servername, $username, $password, $dbname);
 
+// Validação de conexão
 if ($conn->connect_error) {
     die("Conexão falhou: " . $conn->connect_error);
 }
-
 ?>
-=======
-//Criando Conexão
-$conn = new mysqli($serverName, $userName, $password, $dbName);
-
-//Validação de Conexão
-if ($conn->connect_error){
-    echo "Conexão Falhou";
-}
-
-
-?>
->>>>>>> 4fada993cb0d3e682025c0791b907505a03dffb4

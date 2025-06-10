@@ -1,186 +1,83 @@
 <!doctype html>
-<html lang="en">
-<<<<<<< HEAD
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Bootstrap demo</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
-        <link rel="stylesheet" href="../estilos/StyleCadastro.css">
-    </head>
-    <body>
-        <nav class="navbar bg-body-tertiary">
-            <form class="container-fluid justify-content-start">
-                <a href="../index.php"><button class="btn btn-outline-success me-2" type="button">   Inicio   </button></a>
-                <a href="cadastroFunc.php"><button class="btn btn-sm btn-outline-secondary" type="button">Novo Funcionario</button></a>
-                <a href="listarFunc.php"><button class="btn btn-sm btn-outline-secondary" type="button">Listar Funcionario</button></a>
-                <a href="alterarSal.php"><button class="btn btn-sm btn-outline-secondary" type="button">Alterar salário</button></a>
-                <a href="alterarDepto.php"><button class="btn btn-sm btn-outline-secondary" type="button">Alterar Departamento</button></a>
-                <a href="DemitirFunc.php"><button class="btn btn-sm btn-outline-secondary" type="button">Demitir Funcionario</button></a>
-            </form>
-        </nav>
-        <main>
-            <section>
-                <form action="cadastroFunc.php" method="post">
-                    <div class="container">
-                        <h1>Cadastro de Funcionário</h1>
-                        <div class="direita">
-                            <div class="mb-3">
-                                <label for="nome" class="form-label">Nome</label>
-                                <input type="text" class="form-control" id="nome" name="nome" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="cargo" class="form-label">E-mail</label>
-                                <input type="text" class="form-control" id="email" name="email" required>
-                            </div>
-                        </div>
-                        <div class="esquerda">
-                            <div class="mb-3">
-                            <label for="id_departamento" class="form-label">Numero do Departamento</label>
-                            <input type="number" class="form-control" id="id_departamento" name="id_departamento" required>
-=======
-
+<html lang="pt-br">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> Inicio</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <title>Cadastro de Funcionário</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../estilos/StyleCadastro.css">
 </head>
-
 <body>
     <nav class="navbar bg-body-tertiary">
         <form class="container-fluid justify-content-start">
-            <a href="../index.php"><button class="btn btn-outline-success me-2" type="button"> Inicio </button></a>
+            <a href="../index.php"><button class="btn btn-outline-success me-2" type="button">Inicio</button></a>
             <a href="cadastroFunc.php"><button class="btn btn-sm btn-outline-secondary" type="button">Novo Funcionario</button></a>
+            <a href="listarFunc.php"><button class="btn btn-sm btn-outline-secondary" type="button">Listar Funcionario</button></a>
             <a href="alterarSal.php"><button class="btn btn-sm btn-outline-secondary" type="button">Alterar salário</button></a>
             <a href="alterarDepto.php"><button class="btn btn-sm btn-outline-secondary" type="button">Alterar Departamento</button></a>
             <a href="DemitirFunc.php"><button class="btn btn-sm btn-outline-secondary" type="button">Demitir Funcionario</button></a>
         </form>
     </nav>
 
-
-    
     <main>
-        <section>
-            <form action="../conexao/conexao.php" method="post">
-                <div class="container">
-                    <h1>Cadastro de Funcionário</h1>
-                    <div class="direita">
+        <section class="container mt-4">
+            <h1>Cadastro de Funcionário</h1>
+            <form action="" method="post">
+                <div class="row">
+                    <div class="col-md-6">
                         <div class="mb-3">
                             <label for="nome" class="form-label">Nome</label>
                             <input type="text" class="form-control" id="nome" name="nome" required>
                         </div>
                         <div class="mb-3">
-                            <label for="cargo" class="form-label">E-mail</label>
-                            <input type="text" class="form-control" id="email" name="email" required>
+                            <label for="email" class="form-label">E-mail</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
                         </div>
                     </div>
-                    <div class="esquerda">
+                    <div class="col-md-6">
                         <div class="mb-3">
-                            <label for="departamento" class="form-label">Departamento</label>
-                            <input type="text" class="form-control" id="departamento" name="departamento" required>
->>>>>>> 4fada993cb0d3e682025c0791b907505a03dffb4
+                            <label for="id_departamento" class="form-label">ID do Departamento</label>
+                            <input type="number" class="form-control" id="id_departamento" name="id_departamento" required>
                         </div>
                         <div class="mb-3">
-                            <label for="id_cargo" class="form-label">Numero do Cargo</label>
-                            <input type="text" class="form-control" id="id_cargo" name="id_cargo" required>
+                            <label for="id_cargo" class="form-label">ID do Cargo</label>
+                            <input type="number" class="form-control" id="id_cargo" name="id_cargo" required>
                         </div>
-<<<<<<< HEAD
-                        </div>
-                        <button type="submit" class="btn btn-primary">Cadastrar</button>
-=======
->>>>>>> 4fada993cb0d3e682025c0791b907505a03dffb4
                     </div>
-
-                    <button type="submit" class="btn btn-primary">Cadastrar</button>
                 </div>
+                <button type="submit" class="btn btn-primary">Cadastrar</button>
             </form>
+
+            <!-- PHP -->
+            <?php
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+
+                try {
+                    include("../conexao/conexao.php");
+
+                    $nome = $_POST["nome"];
+                    $email = $_POST["email"];
+                    $id_departamento = $_POST["id_departamento"];
+                    $id_cargo = $_POST["id_cargo"];
+
+                    $sql = "INSERT INTO Funcionarios (nome, email, id_departamento, id_cargo) VALUES (?, ?, ?, ?)";
+                    $stmt = $conn->prepare($sql);
+                    $stmt->bind_param("ssii", $nome, $email, $id_departamento, $id_cargo);
+                    $stmt->execute();
+
+                    echo "<div class='alert alert-success mt-3'>Funcionário cadastrado com sucesso.</div>";
+
+                    $stmt->close();
+                    $conn->close();
+                } catch (mysqli_sql_exception $e) {
+                    echo "<div class='alert alert-danger mt-3'>Erro ao cadastrar funcionário: " . $e->getMessage() . "</div>";
+                }
+            }
+            ?>
         </section>
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
-<<<<<<< HEAD
-    
-    <?php
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT); // ativa exceções para erros do MySQL
 
-            try {
-                include("../conexao/conexao.php");
-                $nome = $_POST["nome"];
-                $email = $_POST["email"];
-                $departamento = $_POST["id_departamento"];
-                $cargo = $_POST["id_cargo"];
-                $dataHoje = date("d/m/Y");
-                
-
-
-                $sql = "INSERT INTO Funcionarios (nome, email, id_departamento, id_cargo) VALUES (?, ?, ?, ?)";
-                $stmt = $conn->prepare($sql);
-                $stmt->bind_param("ssss", $nome, $email, $departamento, $cargo);
-                $stmt->execute();
-
-                echo "<div class='mensagem sucesso'>Usuário cadastrado com sucesso</div>";
-
-                $stmt->close();
-                $conn->close();
-            } catch (mysqli_sql_exception $e) {
-                if ($stmt->affected_rows > 0) {
-                        echo "<script language='javascript' type='text/javascript'>alert('Funcionario cadastrado.');window.location.href='index.php';</script>";
-                    } else {
-                        echo "<script language='javascript' type='text/javascript'>alert('Erro ao cadastrar.');window.location.href='index.php';</script>";
-                    }
-            }
-        }
-        ?>
-    
-    </body>
-=======
-
-    <?php
-
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-        mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-
-        try {
-            //Capturar um arquivo externo
-            include("../conexao/conexao.php");
-
-            //Variáveis usuários
-            $nome = $_POST["nome"];
-            $email = $_POST["sobrenome"];
-            $departamento = $_POST["email"];
-            $cargo = $_POST["curso"];
-
-            //Consulta SQL 
-            $sql = "INSERT INTO Funcionarios (id, nome, email, departamento, cargo)  VALUES (?, ?, ?, ?, ?)";
-
-            //Preparar a consulta
-            $stmt = $conn->prepare($sql);
-
-            //Vincular as variáveis do usuário com a consulta SQL
-            $stmt->bind_param("sssss", $id, $nome, $email, $departamento, $cargo);
-
-            //Executar a consulta
-            $stmt->execute();
-
-            //Exibindo a mensagem de sucesso
-            echo "<div class = 'mensagem sucesso'> Usuário cadastrado com sucesso </div>";
-
-            //Encerrar a consulta SQL e Conexão com o banco de dados
-            $stmt->close();
-            $conn->close();
-        } catch (mysqli_sql_exception $e) {
-            echo "<div class = 'mensagem erro'> Erro ao cadastrar " . $e->getMessage() . "</div>";
-        }
-    }
-
-
-
-    ?>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
->>>>>>> 4fada993cb0d3e682025c0791b907505a03dffb4
 </html>
