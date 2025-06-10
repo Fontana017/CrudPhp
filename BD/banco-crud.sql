@@ -3,27 +3,31 @@ use crudPHP;
 
 
 CREATE TABLE Departamentos (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    nome VARCHAR(100) NOT NULL UNIQUE
+    id INT AUTO_INCREMENT,
+    nome VARCHAR(100) NOT NULL UNIQUE,
+
+    CONSTRAINT Departamentos PRIMARY KEY (id,nome)
 );
 
 CREATE TABLE Cargos (
     id INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(100) NOT NULL UNIQUE,
-    salario_base DECIMAL(10, 2) NOT NULL
+    salario_base DECIMAL(10, 2) NOT NULL,
+
+     CONSTRAINT Cargos PRIMARY KEY (id,nome)
 );
 
 CREATE TABLE Funcionarios (
     id INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(100) NOT NULL,
     email VARCHAR(100) UNIQUE,
-    id_departamento INT NOT NULL,
-    id_cargo INT NOT NULL,
+    departamento VARCHAR(100) NOT NULL UNIQUE,
+    cargo VARCHAR(100) NOT NULL UNIQUEL,
     data_admissao DATE NOT NULL,
     ativo TINYINT(1) DEFAULT 1,
 
-    FOREIGN KEY (id_departamento) REFERENCES Departamentos(id),
-    FOREIGN KEY (id_cargo) REFERENCES Cargos(id)
+    FOREIGN KEY (departamento) REFERENCES Departamentos(nome),
+    FOREIGN KEY (icargo) REFERENCES Cargos(nome)
 );
 
 create table func_ativo(
